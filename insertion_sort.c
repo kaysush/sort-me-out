@@ -59,7 +59,13 @@ void insertion_sort(int * array, int length){
 	for( i = 2 ; i < length ; i++){
 		int temp = array[i];
 		j = i-1;
-		while( j >=0 && array[j] > temp ){
+		
+		/*
+		* Loop untill you dont't find the right position i.e.  
+		* a number smaller than the current one.
+		*/
+		
+		while( j >=0 && array[j] > temp ){ 
 			swap_count++;
 			comparison_count++;
 			array[j+1] = array[j];
@@ -68,7 +74,7 @@ void insertion_sort(int * array, int length){
 
 		comparison_count++; // because last comparison failed.
 
-		array[j+1] = temp;
+		array[j+1] = temp; // Insert the current number in its right position.
 		
 	}
 }
